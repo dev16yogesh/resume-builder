@@ -1,0 +1,53 @@
+.project-heading{
+    text-align: initial;
+    border-left: 4px solid  #38b2ac;
+    padding-left: 6px;
+    color: #38b2ac;
+    border-left-width: 4px;
+    padding-left: .75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+        @media (max-width: 767px){
+            padding-left: 0px;
+        }
+    }
+.projectData{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.project-name{
+    text-align: initial;
+    letter-spacing: -.025em;
+    line-height: 1.625;
+    color: #4a5568;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.project-duration{
+    text-align: initial;
+}
+
+.project-technology{
+    text-align: initial;
+    font-weight: 600;
+    color: #38b2ac;
+}
+
+.project-role{
+    text-align: initial;
+    font-size: .875rem;
+    color: #718096;
+    letter-spacing: .025em;
+    font-weight: inherit;
+}
+
+.project-responsibility{
+    text-align: initial;
+}
+
+.project-description{
+    text-align: initial;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

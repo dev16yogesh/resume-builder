@@ -1,0 +1,7 @@
+<h5 class="project-heading">Projects:</h5>
+<div class="projectData" *ngFor="let index of resume.projects">
+    <h4 class="project-name">{{index.projectTitle}}</h4>
+    <div class="project-role">{{index.role}} | {{index.projectDuration}} | {{index.responsibility}}</div>
+    <div class="project-technology">{{index.keySkills}}</div>
+    <div class="project-description">{{index.projectDescription}}</div>
+</div>

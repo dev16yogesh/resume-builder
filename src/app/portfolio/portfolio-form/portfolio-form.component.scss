@@ -1,0 +1,57 @@
+.main-form{
+    display: flex;
+    margin: 2%;
+    border: 1px solid black;
+    flex-direction: column;
+   
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    color: aliceblue;
+    line-height: 40px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    position: relative;
+}
+
+.resumeformtitle{
+    padding-top: 8px;
+}
+
+.formdata{
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4%;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    color: azure;
+    line-height: 40px;
+}
+
+.nav-link:hover {
+    color: aqua;
+    text-decoration: underline;
+}
+.nav-link {
+    color: greenyellow;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btnclose{
+    padding-top: 11px;
+    padding-bottom: 13px;
+}

@@ -1,0 +1,68 @@
+<div class="root-container">
+    <div class="card text-center">
+        <div class="card-header">
+            <div class="resumeformtitle"> Resume: Small introduction</div> <div class="resumeform"> <a class="nav-link" [routerLink]="['resumeBuilder']" routerLinkActive="active">BUILD YOUR RESUME</a></div>
+            <input type="button" class="btn btn-primary" value="Download" (click)="htmltoPDF()"/>
+     
+        </div>
+        <!-- <div>
+            <input type="button" class="btn btn-primary" value="Download" (click)="htmltoPDF()"/>
+        </div> -->
+        <div class="card-body" id="contentToConvert">
+            <div class="basic-details">
+                <div class="name-designation">
+                    <div class="card-titles">{{resume.firstName +" "+ resume.lastName}}</div>
+                    <div class="designation">{{resume.designation}}</div>
+                </div>
+                <div class="contact">
+                    <div><img src="../../assets/gmail.png" alt="..." class="icon-thumbnail"> : <a href="mailto:{{jsonData.contact[0].email}}">{{resume.email}}</a> </div>
+                    <div (click)="openLinkedIn()"> <img src="../../assets/linkedin.png" alt="..." class="icon-thumbnail"> : {{resume.firstName + resume.lastName}}</div>
+                    <div><img src="../../assets/phone.png" alt="..." class="icon-thumbnail"> : {{resume.phone}}</div>
+                    <div><img src="../../assets/location.png" alt="..." class="icon-thumbnail"> : {{jsonData.contact[0].location}}</div>
+                   
+                </div>
+            </div>
+            <hr />
+            <div class="about-me">
+                <div class="profile-photo"><img src="../../assets/people.svg" alt="..." class="img-thumbnail"></div>
+                <div class="introduction">
+                    <p>{{resume.introduction}}</p>
+                </div>
+            </div>
+
+            <hr />
+            <div class="main-body">
+                <div class="main-left">
+                    <div class="experience">
+                        <app-experience></app-experience>
+                    </div>
+                    <div class="project">
+                        <app-projects></app-projects>
+                    </div>
+
+                </div>
+                <div class="main-right">
+                    <div class="skill">
+                        <h5 class="skill-heading">Skills:</h5>
+                        <div class="skilled" *ngFor="let val of resume1.skills">
+                            <app-skill [value]=val.technology [score]=val.rate></app-skill>
+                        </div>
+                    </div>
+                    <div class="education">
+                        <h5 class="education-heading">Education:</h5>
+                        <div class="edudata" *ngFor="let val of resume1.education">
+                            <app-education [degree]=val.degree [stream]=val.stream [university]=val.university [year]= val.duration ></app-education>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr />
+            <app-footer></app-footer>
+        </div>
+      
+    </div>
+    <div class="card-footer text-muted">
+        Drop your request invite here :  <a href="mailto:{{jsonData.contact[0].email}}">  send invite</a> 
+    </div>
+</div>

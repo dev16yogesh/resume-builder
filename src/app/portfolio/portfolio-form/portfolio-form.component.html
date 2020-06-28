@@ -1,0 +1,334 @@
+<div class="main-form">
+  <div class="header">
+    <div class="resumeformtitle"> Resume Builder</div>
+    <div class="resumeform"> <a class="nav-link" [routerLink]="['']"
+        [ngClass]="{activeTab: router.url=='/resumeBuilder/resume'}">Back to template</a></div>
+  </div>
+  <div class="formdata">
+    <form class="form" [formGroup]="reactiveforms">
+      <div class="basicInfo"> Basic Information:
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationServer01">First name</label>
+            <input type="text" formControlName="firstName" class="form-control" id="validationServer01"
+              placeholder="First name" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="validationServer02">Last name</label>
+            <input type="text" class="form-control" formControlName="lastName" id="validationServer02"
+              placeholder="Last name" required>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="validationServer03">Current Designation</label>
+            <input type="text" class="form-control" formControlName="designation" id="validationServer03"
+              placeholder="Designation" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationServerUsername">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend3">@</span>
+              </div>
+              <input type="text" class="form-control" formControlName="email" id="validationServerUsername"
+                placeholder="Email" aria-describedby="inputGroupPrepend3" required>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServerUsername">LinkedIn URL</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">https://www.linkedin.com/</span>
+              </div>
+              <input type="text" formControlName="linkedin" class="form-control" id="basic-url"
+                aria-describedby="basic-addon3">
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServer05">Phone</label>
+            <input type="text" class="form-control" formControlName="phone" id="validationServer05" placeholder="Phone"
+              required>
+          </div>
+
+
+        </div>
+        <div class="form-row" formGroupName="address">
+          <div class="col-md-4 mb-3">
+            <label for="validationServer06">City</label>
+            <input type="text" class="form-control" formControlName="city" id="validationServer06"
+              placeholder="City" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServer07">State/Country</label>
+            <input type="text" class="form-control" formControlName="state" placeholder="State/Country" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServer05">Pin</label>
+            <input type="text" class="form-control" formControlName="pincode" placeholder="Zip">
+          </div>
+        </div>
+
+      </div>
+      <hr />
+
+      <div class="introduction"> Introduction:
+        <div class="form-row">
+          <div class="col-md-12 mb-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Career Objective</span>
+              </div>
+              <textarea class="form-control" formControlName="introduction" aria-label="With textarea"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+
+      <div class="skills"> Skills:
+        <hr />
+      </div>
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="addSkills()">Add Skiils</button>
+
+      </div>
+        <div formArrayName="skills"  *ngFor="let e of getSkillControls(); let i= index">
+          <div [formGroupName]="i" class="form-row expblock">
+            <div class="form-group" class="col-md-6 mb-6">
+              <input type="text" class="form-control" formControlName="technology" placeholder="Skill">
+            </div>
+            <div class="form-group" class="col-md-6 mb-6">
+              <input type="number" class="form-control" formControlName="rate" placeholder="Rate 1 to 100">
+            </div>
+            <div class="btnclose">
+              <button class="btn btn-danger" (click)="removeskill(i)">Delete Skill</button>
+            </div>
+          </div>
+        </div>
+
+      <div class="education"> Education:
+        <hr />
+      </div>
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="addEducation()">Add Education</button>
+
+      </div>
+        <div formArrayName="education"  *ngFor="let e of getEduControls(); let i= index">
+          <div [formGroupName]="i" class="form-row expblock">
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="degree" placeholder="Degree Name">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="stream" placeholder="Stream">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="university" placeholder="University">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="duration" placeholder="Tenure">
+            </div>
+            <div class="btnclose">
+              <button class="btn btn-danger" (click)="removeEdu(i)">Delete Education</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      <div class="experience"> Experience:
+        <hr />
+      </div>
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="addexp()">Add Experience</button>
+
+      </div>
+        <div formArrayName="exp"  *ngFor="let e of getControls(); let i= index">
+          <div [formGroupName]="i" class="form-row expblock">
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="companyNames" placeholder="Compay Name">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="experienceinyrs" placeholder="Duration">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="proficiency" placeholder="Skills">
+            </div>
+            <div class="introduction col-md-12 mb-12">
+              <div class="form-row">
+                <div class="col-md-12 mb-12">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Company Description</span>
+                    </div>
+                    <textarea class="form-control" formControlName="descriptiondetails"
+                      aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="btnclose">
+              <button class="btn btn-danger" (click)="removeexp(i)">Delete Experience</button>
+            </div>
+          </div>
+        </div>
+
+      <!-- <div *ngFor="let e of exp.controls; let i = index">
+          <label>Company Name:</label>
+          <input type="text" formControlName="compName">
+          <button (click)="removeexp(i)">Remove Experience</button>
+        </div>
+
+      </div> -->
+
+      <!-- <div class="form-row" formGroupName="experience">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer09">Company Name</label>
+          <input type="text" class="form-control" formControlName="companyName" id="validationServer09"
+            placeholder="Company">
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer10">Duration</label>
+          <input type="text" class="form-control" formControlName="period" placeholder="Duration" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer11">Designation</label>
+          <input type="text" class="form-control" formControlName="designation" placeholder="Designation">
+        </div>
+        <div class="introduction col-md-12 mb-12">
+          <div class="form-row">
+            <div class="col-md-12 mb-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Company Description</span>
+                </div>
+                <textarea class="form-control" formControlName="companyinfo" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <br />
+      <div class="project"> Projects:
+
+        <hr />
+
+      </div>
+
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="addProject()">Add Projects</button>
+
+      </div>
+        <div formArrayName="projects"  *ngFor="let e of getProjectControls(); let i= index">
+          <div [formGroupName]="i" class="form-row expblock">
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="projectTitle" placeholder="Project Name">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="projectDuration" placeholder="Duration">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="keySkills" placeholder="Skills">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="responsibility" placeholder="Responsibility">
+            </div>
+            <div class="form-group" class="col-md-4 mb-3">
+              <input type="text" class="form-control" formControlName="role" placeholder="Roles">
+            </div>
+            <div class="introduction col-md-12 mb-12">
+              <div class="form-row">
+                <div class="col-md-12 mb-12">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Project Description</span>
+                    </div>
+                    <textarea class="form-control" formControlName="projectDescription"
+                      aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="btnclose">
+              <button class="btn btn-danger" (click)="removeproject(i)">Delete Project</button>
+            </div>
+          </div>
+        </div>
+
+      <!-- <div class="form-row" formGroupName="projects">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer12">Company Name</label>
+          <input type="text" class="form-control" formControlName="company" id="validationServer12"
+            placeholder="Company">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer13">Designation</label>
+          <input type="text" class="form-control" formControlName="designation" placeholder="Designation" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer11">Duration</label>
+          <input type="text" class="form-control" formControlName="period" placeholder="Duration">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer11">Role</label>
+          <input type="text" class="form-control" formControlName="role" placeholder="Role">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer11">Skills</label>
+          <textarea class="form-control" formControlName="skill" aria-label="With textarea"></textarea>
+        </div>
+        <div class="introduction col-md-12 mb-12">
+          <div class="form-row">
+            <div class="col-md-12 mb-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Project Description</span>
+                </div>
+                <textarea class="form-control" formControlName="description" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+<!-- 
+      {{reactiveforms.value |json}} -->
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+          <label class="form-check-label" for="invalidCheck3">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="submithandler()" type="button">Submit form</button>
+    </form>
+    <br />
+    <br />
+    <br />
+  </div>
+
+  <div class="footer"> © 2020 | Developed with Angular by Vivek Srivastava</div>
+</div>

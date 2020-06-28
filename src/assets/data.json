@@ -1,0 +1,90 @@
+{
+    "name": "Vivek Srivastava",
+    "position": "Associate Consultant",
+    "profileImage": "",
+    "aboutme": "Highly focused technologist with a multidisciplinary skill set honed over 3+ years in the IT industry. I strive to build great products and can take an initial idea, tackle it from multiple angles and take it from something great to something incredible. With 10+ years of experience in various industries, I design and build scalable solutions, implement internal processes that fit your organization.",
+    "contact": [
+        {
+            "email": "viveksrivastavaxp99@gmail.com",
+            "phone": "+91-7020049587",
+            "location": "Bangalore,India",
+            "linkedIn": "https://www.linkedin.com/in/vivek-srivastva-398934a1/"
+        }
+    ],
+    "skills": [
+        {
+            "name": "JAVA",
+            "coverage": 90
+        },
+        {
+            "name": "ANGULAR",
+            "coverage": 90
+        },
+        {
+            "name": "HTML 5",
+            "coverage": 30
+        },
+        {
+            "name": "CSS 3",
+            "coverage": 80
+        },
+        {
+            "name": "SPRING BOOT",
+            "coverage": 90
+        },
+        {
+            "name": "ELASTIC SEARCH",
+            "coverage": 80
+        },
+        {
+            "name": "BOOTSTRAP",
+            "coverage": 90
+        }
+    ],
+    "education": [
+        {
+            "degree": "M.Tech",
+            "stream": "Comp.Sc",
+            "university": "Biju Pattnaik University of Tecchnology",
+            "year": "2016 - 2020"
+        },
+        {
+            "degree": "B.Tech",
+            "stream": "Comp.Sc",
+            "university": "Biju Pattnaik University of Tecchnology",
+            "year": "2012 - 2016"
+        }
+    ],
+    "experience": [
+        {
+            "company": "XYZ",
+            "role":"Consultant",
+            "duration": "2019 - till date",
+            "introduction": "Malaeb is a group sports community and booking platform. I was managing all technical aspects of the product. I designed a new solution to improve the current platform, build and manage a new development team to migrate the new app. Implement better internal processes to increase productivity."
+        },
+        {
+            "company": "ABC",
+            "role":"Software Engineer",
+            "duration": "2016 - 2019",
+            "introduction": "ABC is a MNC. It's a service provider, consulting and outsourcing firm.Applied Blockchain built blockchain applications for enterprises and startups. I built 4 full stack blockchain projects during my contract."
+        }
+    ],
+    "project":[
+        {
+            "title":"XYZ Technology enablement",
+            "duration":"2019 - till date",
+            "technology":"Angular, Java, HTML, CSS, Spring Boot",
+            "role":"Consultant",
+            "responsibility":"UI/UX",
+            "description":"GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform."
+        },
+        {
+            "title":"ABC Pvt Ltd",
+            "duration":"2016 - 2019",
+            "technology":"Java, Spring Boot",
+            "role":"Software Engineer",
+            "responsibility":"Develop and maintain modules as per project requirements.",
+            "description":"GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform."
+        }
+    ]
+}
