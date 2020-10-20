@@ -18,12 +18,6 @@ export class PortfolioFormComponent implements OnInit {
     this.reactiveforms = this.fb.group({
       firstName: [],
       lastName: [],
-      address : this.fb.group({
-        city: [],
-        state: [],
-        pincode: [],
-      }),
-
       contact : this.fb.group({
         email: [],
         phone: [],
