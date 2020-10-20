@@ -10,8 +10,8 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 })
 export class PortfolioFormComponent implements OnInit {
   reactiveforms: FormGroup;
-  constructor(public router: Router, private fb: FormBuilder) { 
-    
+  constructor(public router: Router, private fb: FormBuilder) {
+
   }
 
   ngOnInit(): void {
@@ -21,7 +21,18 @@ export class PortfolioFormComponent implements OnInit {
       address : this.fb.group({
         city: [],
         state: [],
-        pincode: []
+        pincode: [],
+      }),
+
+      contact : this.fb.group({
+        email: [],
+        phone: [],
+        location: this.fb.group({
+          city: [],
+          state: [],
+          pincode: []
+        }),
+        linkedIn: []
       }),
 
       exp : this.fb.array([
@@ -41,9 +52,9 @@ export class PortfolioFormComponent implements OnInit {
       ]),
 
       designation: [],
-      email: [],
-      linkedin: [],
-      phone: [],
+      // email: [],
+      // linkedin: [],
+      // phone: [],
       introduction: []
     });
   }
@@ -106,7 +117,7 @@ export class PortfolioFormComponent implements OnInit {
       role: ['', Validators.required],
       projectDescription: ['']
     });
-     }
+  }
 
   addexpFormGroup(): FormGroup{
     return this.fb.group({

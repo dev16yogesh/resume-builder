@@ -29,7 +29,7 @@
               placeholder="Designation" required>
           </div>
         </div>
-        <div class="form-row">
+        <div class="form-row" formGroupName="contact">
           <div class="col-md-4 mb-3">
             <label for="validationServerUsername">Email</label>
             <div class="input-group">
@@ -46,7 +46,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon3">https://www.linkedin.com/</span>
               </div>
-              <input type="text" formControlName="linkedin" class="form-control" id="basic-url"
+              <input type="text" formControlName="linkedIn" class="form-control" id="basic-url"
                 aria-describedby="basic-addon3">
             </div>
           </div>
@@ -57,8 +57,8 @@
           </div>
 
 
-        </div>
-        <div class="form-row" formGroupName="address">
+        <!-- </div> -->
+        <div class="form-row" formGroupName="location">
           <div class="col-md-4 mb-3">
             <label for="validationServer06">City</label>
             <input type="text" class="form-control" formControlName="city" id="validationServer06"
@@ -76,7 +76,7 @@
             <input type="text" class="form-control" formControlName="pincode" placeholder="Zip">
           </div>
         </div>
-
+        </div>
       </div>
       <hr />
 
@@ -310,7 +310,7 @@
           </div>
         </div>
       </div> -->
-<!-- 
+<!--
       {{reactiveforms.value |json}} -->
       <div class="form-group">
         <div class="form-check">
@@ -330,5 +330,5 @@
     <br />
   </div>
 
-  <div class="footer"> © 2020 | Developed with Angular by Vivek Srivastava</div>
+  <div class="footer"> © 2020 | Developed with Angular by Yogesh Kumar</div>
 </div>

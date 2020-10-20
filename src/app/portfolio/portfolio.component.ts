@@ -11,11 +11,11 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-  public jsonData: any;
+  public resumeData: any;
   public resume: Resume;
   public resume1: any;
 
-  constructor( public router: Router, private portfolioservice: PortfolioServiceService) { 
+  constructor( public router: Router, private portfolioservice: PortfolioServiceService) {
     this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
     this.resume1 = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
   }
@@ -23,7 +23,7 @@ export class PortfolioComponent implements OnInit {
    public ngOnInit(): void {
     this.portfolioservice.getData()
       .subscribe((data: any): void => {
-        this.jsonData = data;
+        this.resumeData = data;
       });
   }
 
@@ -37,7 +37,7 @@ export class PortfolioComponent implements OnInit {
 // var imgHeight = canvas.height * imgWidth / canvas.width;
 // var heightLeft = imgHeight;
 // imgHeight=imgHeight-30;
- 
+
 // const contentDataURL = canvas.toDataURL('image/png')
 // let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
 // var position = 0;
@@ -61,8 +61,8 @@ htmltoPDF()
 
 }
   public openLinkedIn(){
-    window.open(this.jsonData.contact[0].linkedIn, "_blank", "noopener");
-    console.log(this.jsonData.contact[0].linkedIn);
+    window.open(this.resumeData.contact.linkedIn, "_blank", "noopener");
+    console.log(this.resumeData.contact.linkedIn);
   }
 
 }

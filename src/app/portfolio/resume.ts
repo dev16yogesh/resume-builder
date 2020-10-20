@@ -1,11 +1,8 @@
 export class Resume {
     firstName: string;
     lastName: string;
-    address: Address;
+    contact: Contact;
     designation: string;
-    email: string;
-    linkedin: string;
-    phone: string;
     introduction: string;
     skills: Skill[] = [];
     experience: Experience[] = [];
@@ -24,6 +21,12 @@ export class Experience {
     technology: string;
     skills: string;
     description: string;
+}
+export class Contact{
+    email: string;
+    phone: string;
+    location: Address;
+    linkedIn: string;
 }
 export class Address{
     city: string;

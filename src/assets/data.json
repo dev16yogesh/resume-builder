@@ -1,57 +1,42 @@
 {
-    "name": "Vivek Srivastava",
-    "position": "Associate Consultant",
+    "firstName": "Yogesh",
+    "lastName": "Kumar",
+    "designation": "Consultant",
     "profileImage": "",
-    "aboutme": "Highly focused technologist with a multidisciplinary skill set honed over 3+ years in the IT industry. I strive to build great products and can take an initial idea, tackle it from multiple angles and take it from something great to something incredible. With 10+ years of experience in various industries, I design and build scalable solutions, implement internal processes that fit your organization.",
-    "contact": [
-        {
-            "email": "viveksrivastavaxp99@gmail.com",
-            "phone": "+91-7020049587",
-            "location": "Bangalore,India",
-            "linkedIn": "https://www.linkedin.com/in/vivek-srivastva-398934a1/"
-        }
-    ],
+    "introduction": "Highly focused technologist with a multidisciplinary skill set honed over 3+ years in the IT industry. I strive to build great products and can take an initial idea, tackle it from multiple angles and take it from something great to something incredible. With 10+ years of experience in various industries, I design and build scalable solutions, implement internal processes that fit your organization.",
+    "contact": {
+      "email": "yogesh16kumar08@gmail.com",
+      "phone": "+91-9113837283",
+      "location": "Bangalore,India",
+      "linkedIn": "https://www.linkedin.com/in/yogesh-kumar-a2883a12b"
+    },
     "skills": [
         {
-            "name": "JAVA",
-            "coverage": 90
+            "technology": "ReactJs",
+            "rate": 70
         },
         {
-            "name": "ANGULAR",
-            "coverage": 90
+            "technology": "ANGULAR",
+            "rate": 80
         },
         {
-            "name": "HTML 5",
-            "coverage": 30
+            "technology": "HTML 5",
+            "rate": 80
         },
         {
-            "name": "CSS 3",
-            "coverage": 80
+            "technology": "CSS 3",
+            "rate": 80
         },
         {
-            "name": "SPRING BOOT",
-            "coverage": 90
-        },
-        {
-            "name": "ELASTIC SEARCH",
-            "coverage": 80
-        },
-        {
-            "name": "BOOTSTRAP",
-            "coverage": 90
+            "technology": "BOOTSTRAP",
+            "rate": 90
         }
     ],
     "education": [
         {
-            "degree": "M.Tech",
+            "degree": "B.E",
             "stream": "Comp.Sc",
-            "university": "Biju Pattnaik University of Tecchnology",
-            "year": "2016 - 2020"
-        },
-        {
-            "degree": "B.Tech",
-            "stream": "Comp.Sc",
-            "university": "Biju Pattnaik University of Tecchnology",
+            "university": "Vemana Institute of Technology",
             "year": "2012 - 2016"
         }
     ],
@@ -73,7 +58,7 @@
         {
             "title":"XYZ Technology enablement",
             "duration":"2019 - till date",
-            "technology":"Angular, Java, HTML, CSS, Spring Boot",
+            "technology":"Angular, HTML5, CSS, Bootstrap",
             "role":"Consultant",
             "responsibility":"UI/UX",
             "description":"GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform."
@@ -81,7 +66,7 @@
         {
             "title":"ABC Pvt Ltd",
             "duration":"2016 - 2019",
-            "technology":"Java, Spring Boot",
+            "technology":"ReactJs, HTML5, CSS3",
             "role":"Software Engineer",
             "responsibility":"Develop and maintain modules as per project requirements.",
             "description":"GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform."
