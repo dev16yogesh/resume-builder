@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PortfolioServiceService } from '../../service/portfolio-service.service';
 import { Resume } from '../resume';
 
@@ -8,18 +8,14 @@ import { Resume } from '../resume';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-public jsonData;
-public resume: any;
+  public projects: any;
+  @Input() projectData: any;
 
-  constructor(private portfolioservice: PortfolioServiceService) {
-    this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
+  constructor() {
   }
- 
+
   public ngOnInit(): void {
-    this.portfolioservice.getData()
-      .subscribe((data: any): void => {
-        this.jsonData = data;
-      });
+    this.projects = this.projectData;
   }
 
 }

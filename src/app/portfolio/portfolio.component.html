@@ -18,14 +18,13 @@
                     <div><img src="../../assets/gmail.png" alt="..." class="icon-thumbnail"> : <a href="mailto:{{resumeData.contact.email}}">{{resumeData.contact.email}}</a> </div>
                     <div (click)="openLinkedIn()"> <img src="../../assets/linkedin.png" alt="..." class="icon-thumbnail"> : {{resumeData.firstName + resumeData.lastName}}</div>
                     <div><img src="../../assets/phone.png" alt="..." class="icon-thumbnail"> : {{resumeData.contact.phone}}</div>
-                    <div><img src="../../assets/location.png" alt="..." class="icon-thumbnail"> : {{resumeData.contact.location}}</div>
-
+                    <div><img src="../../assets/location.png" alt="..." class="icon-thumbnail"> : {{resumeData.contact.location.city + ", " + resumeData.contact.location.state}}</div>
                 </div>
             </div>
             <hr />
             <div class="about-me">
-                <div class="profile-photo"><img src="../../assets/people.svg" alt="..." class="img-thumbnail"></div>
-                <div class="introduction">
+                <div *ngIf="resumeData.profileImage" class="profile-photo"><img [src]="resumeData.profileImage" alt="..." class="img-thumbnail" /></div>
+                <div [ngClass]="{'full-width': !resumeData.profileImage}" class="introduction-section">
                     <p>{{resumeData.introduction}}</p>
                 </div>
             </div>
@@ -34,10 +33,10 @@
             <div class="main-body">
                 <div class="main-left">
                     <div class="experience">
-                        <app-experience></app-experience>
+                        <app-experience [experienceData]="resumeData.experience"></app-experience>
                     </div>
                     <div class="project">
-                        <app-projects></app-projects>
+                        <app-projects [projectData]="resumeData.project"></app-projects>
                     </div>
 
                 </div>

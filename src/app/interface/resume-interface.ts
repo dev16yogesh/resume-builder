@@ -1,33 +1,28 @@
-export class Resume {
+export interface ResumeResponse {
   firstName: string;
   lastName: string;
   contact: Contact;
   designation: string;
   introduction: string;
-  skills: Skill[] = [];
-  experience: Experience[] = [];
-  education: Education[] = [];
-  project: Projects[] = [];
-  constructor() {
-    this.experience.push(new Experience());
-    this.education.push(new Education());
-    this.skills.push(new Skill());
-    this.project.push(new Projects());
-  }
+  skills: Array<Skill>;
+  experience: Array<Experience>;
+  education: Array<Education>;
+  project: Projects;
 }
+
 export class Experience {
   company: string;
   duration: string;
   role: string;
   description: string;
 }
-export class Contact{
+export class Contact {
   email: string;
   phone: string;
   location: Address;
   linkedIn: string;
 }
-export class Address{
+export class Address {
   city: string;
   state: string;
   pincode: string;
@@ -39,7 +34,7 @@ export class Education {
   tenure: number;
 }
 
-export class Projects{
+export class Projects {
   projectTitle: string;
   projectDuration: string;
   keySkills: string;

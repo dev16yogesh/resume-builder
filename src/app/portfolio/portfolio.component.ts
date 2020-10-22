@@ -1,9 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, SimpleChange } from '@angular/core';
+import { ResumeResponse } from '../interface/resume-interface';
 import { PortfolioServiceService } from '../service/portfolio-service.service';
 import { Router, Event } from '@angular/router';
 import {Resume} from './resume';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import { CommonServiceService } from '../service/common-service.service';
+
 
 @Component({
   selector: 'app-portfolio',
@@ -12,19 +15,24 @@ import html2canvas from 'html2canvas';
 })
 export class PortfolioComponent implements OnInit {
   public resumeData: any;
-  public resume: Resume;
-  public resume1: any;
+  private enteredData: any;
 
-  constructor( public router: Router, private portfolioservice: PortfolioServiceService) {
-    this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
-    this.resume1 = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
-  }
+  constructor(
+     public router: Router,
+     private portfolioservice: PortfolioServiceService,
+     private commonServiceService: CommonServiceService
+    ) { }
 
-   public ngOnInit(): void {
-    this.portfolioservice.getData()
-      .subscribe((data: any): void => {
-        this.resumeData = data;
+  ngOnInit(): void {
+    this.enteredData = this.commonServiceService.getResumeResponse();
+    if (this.enteredData && Object.keys(this.enteredData).length) {
+      this.resumeData = this.enteredData;
+    } else {
+      this.portfolioservice.getData()
+      .subscribe((resumeResponse: ResumeResponse): void => {
+        this.resumeData = resumeResponse;
       });
+    }
   }
 
 //   public convetToPDF()

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Event } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { CommonServiceService } from '../../service/common-service.service';
 
 
 @Component({
@@ -10,9 +11,11 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 })
 export class PortfolioFormComponent implements OnInit {
   reactiveforms: FormGroup;
-  constructor(public router: Router, private fb: FormBuilder) {
-
-  }
+  constructor(
+    public router: Router,
+    private fb: FormBuilder,
+    private commonServiceService: CommonServiceService
+  ) { }
 
   ngOnInit(): void {
     this.reactiveforms = this.fb.group({
@@ -33,7 +36,7 @@ export class PortfolioFormComponent implements OnInit {
         this.addexpFormGroup()
       ]),
 
-      projects : this.fb.array([
+      project : this.fb.array([
         this.addProjectFormGroup()
       ]),
 
@@ -46,9 +49,6 @@ export class PortfolioFormComponent implements OnInit {
       ]),
 
       designation: [],
-      // email: [],
-      // linkedin: [],
-      // phone: [],
       introduction: []
     });
   }
@@ -57,8 +57,8 @@ export class PortfolioFormComponent implements OnInit {
     return this.reactiveforms.get('exp') as FormArray;
   }
 
-  get projects(){
-    return this.reactiveforms.get('projects') as FormArray;
+  get project(){
+    return this.reactiveforms.get('project') as FormArray;
   }
 
   get education(){
@@ -75,7 +75,7 @@ export class PortfolioFormComponent implements OnInit {
   }
 
   addProject(){
-    (<FormArray>this.reactiveforms.get('projects')).push(this.addProjectFormGroup());
+    (<FormArray>this.reactiveforms.get('project')).push(this.addProjectFormGroup());
   }
 
   addEducation(){
@@ -91,7 +91,7 @@ export class PortfolioFormComponent implements OnInit {
   }
 
   getProjectControls() {
-    return (this.reactiveforms.get('projects') as FormArray).controls;
+    return (this.reactiveforms.get('project') as FormArray).controls;
   }
 
   getEduControls() {
@@ -115,10 +115,10 @@ export class PortfolioFormComponent implements OnInit {
 
   addexpFormGroup(): FormGroup{
     return this.fb.group({
-      companyNames: ['', Validators.required],
-      experienceinyrs: ['', Validators.required],
-      proficiency: ['', Validators.required],
-      descriptiondetails: ['']
+      company: ['', Validators.required],
+      duration: ['', Validators.required],
+      role: ['', Validators.required],
+      description: ['']
     });
     //this.exp.push(this.fb.control(''));
      }
@@ -145,7 +145,7 @@ export class PortfolioFormComponent implements OnInit {
   }
 
   removeproject(index: number){
-    this.projects.removeAt(index);
+    this.project.removeAt(index);
   }
 
   removeEdu(index: number){
@@ -158,7 +158,7 @@ export class PortfolioFormComponent implements OnInit {
 
 submithandler(){
   console.log(this.reactiveforms.value);
-  sessionStorage.setItem('resume', JSON.stringify(this.reactiveforms.value));
+  this.commonServiceService.setResumeResponse(this.reactiveforms.value);
   this.router.navigate(['/']);
 }
 }

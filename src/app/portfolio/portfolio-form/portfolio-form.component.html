@@ -158,13 +158,13 @@
         <div formArrayName="exp"  *ngFor="let e of getControls(); let i= index">
           <div [formGroupName]="i" class="form-row expblock">
             <div class="form-group" class="col-md-4 mb-3">
-              <input type="text" class="form-control" formControlName="companyNames" placeholder="Compay Name">
+              <input type="text" class="form-control" formControlName="company" placeholder="Compay Name">
             </div>
             <div class="form-group" class="col-md-4 mb-3">
-              <input type="text" class="form-control" formControlName="experienceinyrs" placeholder="Duration">
+              <input type="text" class="form-control" formControlName="duration" placeholder="Duration">
             </div>
             <div class="form-group" class="col-md-4 mb-3">
-              <input type="text" class="form-control" formControlName="proficiency" placeholder="Skills">
+              <input type="text" class="form-control" formControlName="role" placeholder="Role">
             </div>
             <div class="introduction col-md-12 mb-12">
               <div class="form-row">
@@ -173,7 +173,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Company Description</span>
                     </div>
-                    <textarea class="form-control" formControlName="descriptiondetails"
+                    <textarea class="form-control" formControlName="description"
                       aria-label="With textarea"></textarea>
                   </div>
                 </div>
@@ -237,7 +237,7 @@
         <button class="btn btn-primary" (click)="addProject()">Add Projects</button>
 
       </div>
-        <div formArrayName="projects"  *ngFor="let e of getProjectControls(); let i= index">
+        <div formArrayName="project"  *ngFor="let e of getProjectControls(); let i= index">
           <div [formGroupName]="i" class="form-row expblock">
             <div class="form-group" class="col-md-4 mb-3">
               <input type="text" class="form-control" formControlName="projectTitle" placeholder="Project Name">
