@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './portfolio/footer/footer.component';
 import { PortfolioFormComponent } from './portfolio/portfolio-form/portfolio-form.component';
+import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -22,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ExperienceComponent,
     ProjectsComponent,
     FooterComponent,
-    PortfolioFormComponent
+    PortfolioFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

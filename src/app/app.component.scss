@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins";
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);
+
+@mixin make-max-widths-container-width($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+        max-width: $container-max-width;
+    }
+  }
+}
+
+.container{
+   @include make-max-widths-container-width();
+}
+
+@include media-breakpoint-down(sm) {
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .row > .col,
+  .row > [class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.root-container{
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
